@@ -1,4 +1,5 @@
 from PySide2 import QtWidgets
+import sys
 
 info={
     "task1":{"status":"In progress","assigned to":"emp1"},
@@ -23,7 +24,12 @@ def display_info(id,query_key):
     QtWidgets.QMessageBox.information(None,'Task Info Tool',data)
 
 
-display_info('task1','status')  
+# display_info('task1','status')  
+if __name__=='__main__':
+    arg=sys.argv
+    print(arg)
+    display_info(arg[1],arg[2])
+
 
 
 
